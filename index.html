@@ -26,7 +26,7 @@ align-items:center;
 font-family:'Segoe UI',sans-serif;
 
 background-image:
-linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45)),
+linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.35)),
 url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2');
 
 background-size:cover;
@@ -34,6 +34,7 @@ background-position:center;
 
 overflow:hidden;
 color:white;
+padding:20px;
 }
 
 /* Curtain Animation */
@@ -47,7 +48,7 @@ top:0;
 width:50%;
 height:100%;
 
-background:#ffb6c1;
+background:#ffd6e7;
 
 z-index:10;
 
@@ -97,14 +98,14 @@ position:relative;
 
 background:rgba(255,255,255,0.12);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 
-padding:25px;
+padding:22px;
 
 border-radius:30px;
 
-max-width:400px;
-width:90%;
+max-width:420px;
+width:100%;
 
 text-align:center;
 
@@ -128,28 +129,11 @@ transform:scale(1);
 
 h1{
 
-font-size:42px;
-margin-bottom:15px;
-
-color:#fff0f5;
-}
-
-.symbol{
-
-font-size:28px;
+font-size:40px;
 margin-bottom:18px;
-color:#ffd1dc;
-font-weight:bold;
-}
-
-.quote{
-
-margin-bottom:18px;
-
-font-size:16px;
 
 color:#fff5f7;
-line-height:1.5;
+font-weight:600;
 }
 
 /* Poster */
@@ -157,12 +141,30 @@ line-height:1.5;
 img{
 
 width:100%;
+height:auto;
 
 border-radius:22px;
 
-margin-bottom:20px;
+margin-bottom:22px;
 
-box-shadow:0 0 20px rgba(255,255,255,0.3);
+box-shadow:0 0 25px rgba(255,255,255,0.25);
+}
+
+/* Quote */
+
+.quote{
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#fff7fa;
+
+margin-bottom:22px;
+
+text-align:center;
+
+font-weight:500;
 }
 
 /* Audio */
@@ -170,6 +172,7 @@ box-shadow:0 0 20px rgba(255,255,255,0.3);
 audio{
 
 width:100%;
+border-radius:30px;
 }
 
 /* Footer */
@@ -177,8 +180,10 @@ width:100%;
 .footer{
 
 margin-top:18px;
+
 font-size:14px;
-color:#ffeef2;
+
+color:#fff0f5;
 }
 
 </style>
@@ -193,22 +198,30 @@ color:#ffeef2;
 
 <h1>Our Story ❤️</h1>
 
-<div class="symbol">
-N ♡ G
-</div>
-
 <img src="poster.jpg">
 
 <div class="quote">
-“Every love story is beautiful, but ours is my favorite ✨”
+
+ನೀನಿರುವುದು ನನಗೆ...<br>
+
+ನಾನು ಇರುವುದು ನಿನಗೆ....<br>
+
+ನಮ್ಮಿಂದ ಇನ್ನು ಪ್ರೀತಿ ಬೆಳೆಯಲಿ,<br>
+
+ಆಕಾಶದ ಕೊನೆಗೆ!!! ✨
+
 </div>
 
 <audio controls autoplay>
+
 <source src="song.mp3" type="audio/mpeg">
+
 </audio>
 
 <div class="footer">
+
 Forever & Always 💖
+
 </div>
 
 </div>
