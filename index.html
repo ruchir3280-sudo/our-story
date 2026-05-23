@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Story ❤️</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+
+      min-height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      padding:20px;
+
+      background:
+      linear-gradient(
+      rgba(255,182,193,0.35),
+      rgba(255,105,180,0.35)
+      ),
+
+      url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=1400&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+
+    .container{
+
+      width:100%;
+      max-width:450px;
+
+      background:rgba(0,0,0,0.45);
+
+      backdrop-filter:blur(10px);
+
+      border-radius:30px;
+
+      padding:22px;
+
+      text-align:center;
+
+      box-shadow:0 8px 35px rgba(0,0,0,0.35);
+
+      border:1px solid rgba(255,255,255,0.2);
+    }
+
+    .title{
+
+      color:#fff;
+
+      font-size:38px;
+
+      font-weight:700;
+
+      margin-bottom:20px;
+
+      text-shadow:2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .poster{
+
+      width:100%;
+
+      border-radius:25px;
+
+      object-fit:contain;
+
+      box-shadow:0 0 25px rgba(255,255,255,0.25);
+
+      margin-bottom:22px;
+    }
+
+    .quote{
+
+      color:#fff;
+
+      font-size:22px;
+
+      line-height:1.7;
+
+      font-weight:600;
+
+      margin-bottom:25px;
+
+      text-shadow:2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .music-box{
+
+      background:rgba(255,255,255,0.12);
+
+      border-radius:22px;
+
+      padding:15px;
+
+      border:1px solid rgba(255,255,255,0.15);
+    }
+
+    .song-title{
+
+      color:white;
+
+      font-size:18px;
+
+      margin-bottom:12px;
+
+      font-weight:600;
+    }
+
+    audio{
+
+      width:100%;
+      border-radius:30px;
+    }
+
+    .footer{
+
+      margin-top:18px;
+
+      color:#ffd6e7;
+
+      font-size:15px;
+
+      letter-spacing:1px;
+    }
+
+    @media(max-width:480px){
+
+      .title{
+        font-size:30px;
+      }
+
+      .quote{
+        font-size:18px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- TITLE -->
+    <div class="title">
+      Our Story ❤️
+    </div>
+
+    <!-- POSTER -->
+    <img src="./poster.jpg" class="poster">
+
+    <!-- QUOTE -->
+    <div class="quote">
+      ನೀನಿರುವುದು ನನಗೆ, <br>
+      ನಾನು ಇರುವುದು ನಿನಗೆ <br>
+      ನೆಮ್ಮಿಂದೆ ಇನ್ನು ಪ್ರೀತಿ ಬೆಲೆಯಲಿ, <br>
+      ಆಕಾಶದ ಕೊನೆಗೆ!
+    </div>
+
+    <!-- AUDIO SECTION -->
+    <div class="music-box">
+
+      <div class="song-title">
+        🎵 Playing Our Song
+      </div>
+
+      <audio controls autoplay>
+        <source src="./song.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      Different moments, same energy ❤️
+    </div>
+
+  </div>
+
+</body>
+</html>
