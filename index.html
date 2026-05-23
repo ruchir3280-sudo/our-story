@@ -26,18 +26,18 @@ align-items:center;
 font-family:'Segoe UI',sans-serif;
 
 background-image:
-linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.35)),
-url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2');
+linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0.18)),
+url('background.jpg');
 
 background-size:cover;
 background-position:center;
 
 overflow:hidden;
-color:white;
 padding:20px;
+color:white;
 }
 
-/* Curtain Animation */
+/* Curtain Opening Animation */
 
 .curtain-left,
 .curtain-right{
@@ -48,7 +48,7 @@ top:0;
 width:50%;
 height:100%;
 
-background:#ffd6e7;
+background:#ffd9e6;
 
 z-index:10;
 
@@ -94,8 +94,6 @@ transform:translateX(100%);
 
 .container{
 
-position:relative;
-
 background:rgba(255,255,255,0.12);
 
 backdrop-filter:blur(12px);
@@ -104,14 +102,14 @@ padding:22px;
 
 border-radius:30px;
 
-max-width:420px;
+max-width:430px;
 width:100%;
 
 text-align:center;
 
-box-shadow:0 0 25px rgba(255,255,255,0.2);
+box-shadow:0 0 30px rgba(255,255,255,0.2);
 
-animation:fadeIn 3s ease;
+animation:fadeIn 2.5s ease;
 }
 
 @keyframes fadeIn{
@@ -130,52 +128,73 @@ transform:scale(1);
 h1{
 
 font-size:40px;
+
 margin-bottom:18px;
 
 color:#fff5f7;
+
 font-weight:600;
 }
 
 /* Poster */
 
-img{
+.poster-container{
+
+position:relative;
+width:100%;
+}
+
+.poster-container img{
 
 width:100%;
-height:auto;
-
-border-radius:22px;
-
-margin-bottom:22px;
+border-radius:24px;
 
 box-shadow:0 0 25px rgba(255,255,255,0.25);
 }
 
-/* Quote */
+/* Music Bar on Poster */
+
+.music-bar{
+
+position:absolute;
+
+bottom:15px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:85%;
+
+background:rgba(255,255,255,0.22);
+
+padding:10px;
+
+border-radius:22px;
+
+backdrop-filter:blur(8px);
+}
+
+.music-bar audio{
+
+width:100%;
+}
+
+/* Kannada Quote */
 
 .quote{
 
-font-size:18px;
+margin-top:24px;
+
+font-size:19px;
 
 line-height:1.9;
 
-color:#fff7fa;
-
-margin-bottom:22px;
-
 text-align:center;
+
+color:#fff7fa;
 
 font-weight:500;
 }
-
-/* Audio */
-
-audio{
-
-width:100%;
-border-radius:30px;
-}
-
-/* Footer */
 
 .footer{
 
@@ -198,7 +217,19 @@ color:#fff0f5;
 
 <h1>Our Story ❤️</h1>
 
+<div class="poster-container">
+
 <img src="poster.jpg">
+
+<div class="music-bar">
+
+<audio controls autoplay>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+</div>
 
 <div class="quote">
 
@@ -211,12 +242,6 @@ color:#fff0f5;
 ಆಕಾಶದ ಕೊನೆಗೆ!!! ✨
 
 </div>
-
-<audio controls autoplay>
-
-<source src="song.mp3" type="audio/mpeg">
-
-</audio>
 
 <div class="footer">
 
