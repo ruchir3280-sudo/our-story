@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Story ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+font-family:'Poppins',sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.7)),
+url('./poster.jpg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+body::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+backdrop-filter:blur(10px);
+}
+
+.container{
+position:relative;
+z-index:2;
+width:90%;
+max-width:430px;
+background:rgba(20,20,20,0.45);
+border:1px solid rgba(255,255,255,0.15);
+padding:22px;
+border-radius:28px;
+box-shadow:0 0 35px rgba(255,105,180,0.35);
+text-align:center;
+animation:fadeIn 1.5s ease;
+}
+
+.title{
+font-size:42px;
+font-weight:700;
+color:white;
+margin-bottom:18px;
+}
+
+.title span{
+color:#ff4f8b;
+}
+
+.photo{
+width:100%;
+border-radius:22px;
+border:4px solid rgba(255,255,255,0.15);
+box-shadow:0 0 25px rgba(255,255,255,0.15);
+}
+
+.quote{
+margin-top:20px;
+font-size:23px;
+line-height:1.7;
+color:#ffd6e7;
+font-family:'Dancing Script',cursive;
+}
+
+.smalltext{
+margin-top:14px;
+font-size:15px;
+color:white;
+opacity:0.9;
+}
+
+.music-box{
+margin-top:28px;
+padding:18px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.music-box h3{
+color:white;
+margin-bottom:12px;
+}
+
+audio{
+width:100%;
+outline:none;
+}
+
+.heart{
+position:absolute;
+bottom:-50px;
+font-size:24px;
+animation:float 8s linear infinite;
+opacity:0.7;
+}
+
+.heart:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.heart:nth-child(2){
+left:30%;
+animation-delay:2s;
+}
+
+.heart:nth-child(3){
+left:50%;
+animation-delay:4s;
+}
+
+.heart:nth-child(4){
+left:70%;
+animation-delay:1s;
+}
+
+.heart:nth-child(5){
+left:90%;
+animation-delay:3s;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0) scale(0.5);
+opacity:0;
+}
+50%{
+opacity:0.8;
+}
+100%{
+transform:translateY(-120vh) scale(1.5);
+opacity:0;
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="heart">❤️</div>
+<div class="heart">💕</div>
+<div class="heart">💖</div>
+<div class="heart">❤️</div>
+<div class="heart">💘</div>
+
+<div class="container">
+
+<div class="title">
+Our Story <span>❤️</span>
+</div>
+
+<img src="./poster.jpg" class="photo" alt="Our Story">
+
+<div class="quote">
+ನೀನಿರುವುದು ನನಗೆ...<br>
+ನಾನಿರುವುದು ನಿನಗೆ..<br>
+ನಿಮ್ಮಿಂದ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ ಆಕಾಶದ ಕೊನೆಗೆ!!!
+</div>
+
+<div class="smalltext">
+Different moments, same energy ✨
+</div>
+
+<div class="music-box">
+
+<h3>🎵 Playing Our Song</h3>
+
+<audio controls loop>
+<source src="./song.mp3" type="audio/mpeg">
+Your browser does not support audio.
+</audio>
+
+</div>
+
+</div>
+
+</body>
+</html>
