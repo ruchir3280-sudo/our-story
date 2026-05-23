@@ -23,61 +23,162 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-font-family:sans-serif;
+font-family:'Segoe UI',sans-serif;
 
 background-image:
-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
+linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.45)),
 url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2');
 
 background-size:cover;
 background-position:center;
 
+overflow:hidden;
 color:white;
-text-align:center;
-padding:20px;
 }
+
+/* Curtain Animation */
+
+.curtain-left,
+.curtain-right{
+
+position:fixed;
+top:0;
+
+width:50%;
+height:100%;
+
+background:#ffb6c1;
+
+z-index:10;
+
+animation-duration:2.5s;
+animation-fill-mode:forwards;
+}
+
+.curtain-left{
+
+left:0;
+animation-name:leftOpen;
+}
+
+.curtain-right{
+
+right:0;
+animation-name:rightOpen;
+}
+
+@keyframes leftOpen{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(-100%);
+}
+}
+
+@keyframes rightOpen{
+
+from{
+transform:translateX(0);
+}
+
+to{
+transform:translateX(100%);
+}
+}
+
+/* Main Card */
 
 .container{
 
-background:rgba(0,0,0,0.45);
+position:relative;
+
+background:rgba(255,255,255,0.12);
+
+backdrop-filter:blur(10px);
 
 padding:25px;
 
-border-radius:25px;
-
-backdrop-filter:blur(8px);
+border-radius:30px;
 
 max-width:400px;
-width:100%;
+width:90%;
+
+text-align:center;
+
+box-shadow:0 0 25px rgba(255,255,255,0.2);
+
+animation:fadeIn 3s ease;
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:scale(0.9);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
 }
 
 h1{
 
 font-size:42px;
-margin-bottom:20px;
+margin-bottom:15px;
+
+color:#fff0f5;
 }
+
+.symbol{
+
+font-size:28px;
+margin-bottom:18px;
+color:#ffd1dc;
+font-weight:bold;
+}
+
+.quote{
+
+margin-bottom:18px;
+
+font-size:16px;
+
+color:#fff5f7;
+line-height:1.5;
+}
+
+/* Poster */
 
 img{
 
 width:100%;
-border-radius:20px;
+
+border-radius:22px;
 
 margin-bottom:20px;
 
-box-shadow:0 0 20px rgba(255,255,255,0.2);
+box-shadow:0 0 20px rgba(255,255,255,0.3);
 }
+
+/* Audio */
 
 audio{
 
 width:100%;
-margin-top:15px;
 }
 
-p{
+/* Footer */
 
-margin-top:15px;
-font-size:15px;
-color:#ddd;
+.footer{
+
+margin-top:18px;
+font-size:14px;
+color:#ffeef2;
 }
 
 </style>
@@ -85,17 +186,30 @@ color:#ddd;
 
 <body>
 
+<div class="curtain-left"></div>
+<div class="curtain-right"></div>
+
 <div class="container">
 
 <h1>Our Story ❤️</h1>
 
+<div class="symbol">
+N ♡ G
+</div>
+
 <img src="poster.jpg">
 
-<audio controls>
+<div class="quote">
+“Every love story is beautiful, but ours is my favorite ✨”
+</div>
+
+<audio controls autoplay>
 <source src="song.mp3" type="audio/mpeg">
 </audio>
 
-<p>Different moments, same love ✨</p>
+<div class="footer">
+Forever & Always 💖
+</div>
 
 </div>
 
