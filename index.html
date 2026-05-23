@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,192 +17,100 @@ box-sizing:border-box;
 
 body{
 
-height:100vh;
+font-family:'Segoe UI',sans-serif;
+
+background:url('background.jpg');
+background-size:cover;
+background-position:center;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-font-family:'Segoe UI',sans-serif;
+min-height:100vh;
 
-background-image:
-linear-gradient(rgba(0,0,0,0.12),rgba(0,0,0,0.18)),
-url('background.jpg');
-
-background-size:cover;
-background-position:center;
-
-overflow:hidden;
 padding:20px;
-color:white;
 }
 
-/* Curtain Opening Animation */
-
-.curtain-left,
-.curtain-right{
-
-position:fixed;
-top:0;
-
-width:50%;
-height:100%;
-
-background:#ffd9e6;
-
-z-index:10;
-
-animation-duration:2.5s;
-animation-fill-mode:forwards;
-}
-
-.curtain-left{
-
-left:0;
-animation-name:leftOpen;
-}
-
-.curtain-right{
-
-right:0;
-animation-name:rightOpen;
-}
-
-@keyframes leftOpen{
-
-from{
-transform:translateX(0);
-}
-
-to{
-transform:translateX(-100%);
-}
-}
-
-@keyframes rightOpen{
-
-from{
-transform:translateX(0);
-}
-
-to{
-transform:translateX(100%);
-}
-}
-
-/* Main Card */
+/* Main Poster */
 
 .container{
 
-background:rgba(255,255,255,0.12);
-
-backdrop-filter:blur(12px);
-
-padding:22px;
-
-border-radius:30px;
-
-max-width:430px;
 width:100%;
+max-width:420px;
+
+background:rgba(255,255,255,0.15);
+
+padding:18px;
+
+border-radius:25px;
+
+backdrop-filter:blur(4px);
 
 text-align:center;
-
-box-shadow:0 0 30px rgba(255,255,255,0.2);
-
-animation:fadeIn 2.5s ease;
 }
 
-@keyframes fadeIn{
-
-from{
-opacity:0;
-transform:scale(0.9);
-}
-
-to{
-opacity:1;
-transform:scale(1);
-}
-}
+/* Heading */
 
 h1{
 
-font-size:40px;
+font-size:38px;
+
+color:white;
 
 margin-bottom:18px;
-
-color:#fff5f7;
-
-font-weight:600;
-}
-
-/* Poster */
-
-.poster-container{
-
-position:relative;
-width:100%;
-}
-
-.poster-container img{
-
-width:100%;
-border-radius:24px;
-
-box-shadow:0 0 25px rgba(255,255,255,0.25);
-}
-
-/* Music Bar on Poster */
-
-.music-bar{
-
-position:absolute;
-
-bottom:15px;
-left:50%;
-
-transform:translateX(-50%);
-
-width:85%;
-
-background:rgba(255,255,255,0.22);
-
-padding:10px;
-
-border-radius:22px;
-
-backdrop-filter:blur(8px);
-}
-
-.music-bar audio{
-
-width:100%;
-}
-
-/* Kannada Quote */
-
-.quote{
-
-margin-top:24px;
-
-font-size:19px;
-
-line-height:1.9;
-
-text-align:center;
-
-color:#fff7fa;
 
 font-weight:500;
 }
 
-.footer{
+/* Poster */
 
-margin-top:18px;
+.poster{
 
-font-size:14px;
+position:relative;
+}
 
-color:#fff0f5;
+.poster img{
+
+width:100%;
+
+border-radius:20px;
+display:block;
+}
+
+/* Audio Bar */
+
+.music{
+
+position:absolute;
+
+bottom:12px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:88%;
+}
+
+.music audio{
+
+width:100%;
+}
+
+/* Quote */
+
+.quote{
+
+margin-top:22px;
+
+font-size:20px;
+
+line-height:1.8;
+
+color:white;
+
+text-align:center;
 }
 
 </style>
@@ -210,20 +118,17 @@ color:#fff0f5;
 
 <body>
 
-<div class="curtain-left"></div>
-<div class="curtain-right"></div>
-
 <div class="container">
 
 <h1>Our Story ❤️</h1>
 
-<div class="poster-container">
+<div class="poster">
 
 <img src="poster.jpg">
 
-<div class="music-bar">
+<div class="music">
 
-<audio controls autoplay>
+<audio controls>
 <source src="song.mp3" type="audio/mpeg">
 </audio>
 
@@ -240,12 +145,6 @@ color:#fff0f5;
 ನಮ್ಮಿಂದ ಇನ್ನು ಪ್ರೀತಿ ಬೆಳೆಯಲಿ,<br>
 
 ಆಕಾಶದ ಕೊನೆಗೆ!!! ✨
-
-</div>
-
-<div class="footer">
-
-Forever & Always 💖
 
 </div>
 
