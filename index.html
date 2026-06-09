@@ -3,144 +3,221 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Our Story ❤️</title>
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Arial',sans-serif;
 }
 
-/* Welcome Screen */
-
-#welcome{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-color:white;
-cursor:pointer;
-z-index:1000;
-transition:opacity 1s ease;
-overflow:hidden;
+body{
+    overflow:hidden;
+    background:black;
 }
 
-.welcome-content{
-padding:20px;
+/* ALL PAGES */
+
+.page{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background-size:cover;
+    background-position:center;
+    transition:all 1.2s ease;
 }
 
-.welcome-quote{
-font-size:30px;
-font-weight:bold;
-line-height:1.8;
-text-shadow:
-0 0 10px #ff66b2,
-0 0 20px #ff3399,
-0 0 40px #ff1a75;
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
 }
 
-.tap{
-margin-top:30px;
-font-size:18px;
-animation:blink 1.5s infinite;
+.content{
+    position:relative;
+    z-index:2;
+    width:90%;
+    max-width:500px;
+    animation:fadeUp 1.5s ease;
 }
 
-@keyframes blink{
-50%{
-opacity:0.3;
-}
-}
-
-.heart{
-position:absolute;
-color:#ff4d88;
-animation:float 6s linear infinite;
-}
-
-@keyframes float{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-100px);
-opacity:0;
-}
-}
-
-/* Story Page */
-
-#story{
-display:none;
-height:100vh;
-justify-content:center;
-align-items:center;
-
-background:
-linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
-url('poster.jpg');
-
-background-size:cover;
-background-position:center;
-}
-
-.container{
-width:90%;
-max-width:400px;
-background:rgba(255,255,255,0.15);
-padding:20px;
-border-radius:25px;
-backdrop-filter:blur(8px);
-text-align:center;
-color:white;
-}
-
-h1{
-font-size:38px;
-margin-bottom:20px;
-text-shadow:0 0 10px pink;
-}
-
-img{
-width:100%;
-border-radius:20px;
-margin-bottom:20px;
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .quote{
-font-size:22px;
-font-weight:800;
-line-height:1.7;
-margin-bottom:25px;
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    line-height:1.8;
 
-text-shadow:
-0 0 6px #ff66b2,
-0 0 12px #ff3399,
-0 0 20px #ff1a75,
-0 0 35px #ff1a75;
+    text-shadow:
+    0 0 10px #ff66b2,
+    0 0 20px #ff3399,
+    0 0 35px #ff1a75,
+    0 0 55px #ff1a75;
+}
+
+.tap{
+    margin-top:30px;
+    color:white;
+    font-size:18px;
+    animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0.3;
+    }
+}
+
+/* PAGE 1 */
+
+#page1{
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80');
+    z-index:3;
+}
+
+/* PAGE 2 */
+
+#page2{
+    display:none;
+
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80');
+
+    z-index:2;
+}
+
+/* PAGE 3 */
+
+#page3{
+    display:none;
+
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),
+    url('poster.jpg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+/* STORY CARD */
+
+.story-card{
+    width:90%;
+    max-width:420px;
+
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+
+    padding:20px;
+    border-radius:25px;
+
+    color:white;
+}
+
+.story-card h1{
+    font-size:38px;
+    margin-bottom:20px;
+    text-shadow:0 0 12px pink;
+}
+
+.story-card img{
+    width:100%;
+    border-radius:20px;
+    margin-bottom:20px;
+}
+
+.story-quote{
+    font-size:22px;
+    font-weight:800;
+    line-height:1.8;
+    margin-bottom:25px;
+
+    text-shadow:
+    0 0 6px #ff66b2,
+    0 0 12px #ff3399,
+    0 0 20px #ff1a75,
+    0 0 35px #ff1a75;
 }
 
 .audio-box{
-background:white;
-padding:15px;
-border-radius:15px;
+    background:white;
+    padding:12px;
+    border-radius:15px;
 }
 
 audio{
-width:100%;
+    width:100%;
+}
+
+/* TRANSITION */
+
+.hide{
+    opacity:0;
+    transform:scale(1.15);
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+    color:#ff4d88;
+    pointer-events:none;
+    z-index:9999;
+
+    animation:rise 6s linear forwards;
+}
+
+@keyframes rise{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+}
+
+/* GLOWING IMAGE */
+
+.circle-image{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid white;
+    margin-bottom:25px;
+
+    box-shadow:
+    0 0 20px #ff66b2,
+    0 0 40px #ff3399;
 }
 
 </style>
@@ -148,84 +225,136 @@ width:100%;
 
 <body>
 
-<!-- Welcome Screen -->
+<!-- PAGE 1 -->
 
-<div id="welcome" onclick="showStory()">
+<div id="page1" class="page" onclick="nextPage1()">
 
-<div class="welcome-content">
+    <div class="overlay"></div>
 
-<div class="welcome-quote">
-ಪ್ರೀತಿಯ ಕಥೆ ಆರಂಭವಾಗುವುದು<br>
-ಒಂದು ನಗುವಿನಿಂದ... ❤️
-</div>
+    <div class="content">
 
-<div class="tap">
-✨ Tap Anywhere To Continue ✨
-</div>
+        <img
+        class="circle-image"
+        src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=500&q=80">
 
-</div>
+        <div class="quote">
+            ಪ್ರೀತಿಯ ಕಥೆ ಆರಂಭವಾಗುವುದು<br>
+            ಒಂದು ನಗುವಿನಿಂದ... ❤️
+        </div>
 
-</div>
+        <div class="tap">
+            ✨ Tap Anywhere To Continue ✨
+        </div>
 
-<!-- Story Page -->
-
-<div id="story">
-
-<div class="container">
-
-<h1>Our Story ❤️</h1>
-
-<img src="poster.jpg" alt="Our Story">
-
-<div class="quote">
-ನಾನಿರುವುದು ನಿನಗೆ...<br>
-ನೀನಿರುವುದು ನನಗೆ...<br>
-ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ ಆಕಾಶದ ಕೊನೆಗೆ!!! ❤️
-</div>
-
-<div class="audio-box">
-<audio controls>
-<source src="song.mp3" type="audio/mpeg">
-</audio>
-</div>
+    </div>
 
 </div>
+
+<!-- PAGE 2 -->
+
+<div id="page2" class="page" onclick="nextPage2()">
+
+    <div class="overlay"></div>
+
+    <div class="content">
+
+        <img
+        class="circle-image"
+        src="https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?auto=format&fit=crop&w=500&q=80">
+
+        <div class="quote">
+            ನೀ ಬಂದ ಮೇಲೆ ನನ್ನ ಜೀವನಕ್ಕೆ<br>
+            ಬಣ್ಣಗಳೇ ಬಣ್ಣಗಳು... ❤️
+        </div>
+
+        <div class="tap">
+            🌹 One More Tap 🌹
+        </div>
+
+    </div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div id="page3" class="page">
+
+    <div class="story-card">
+
+        <h1>Our Story ❤️</h1>
+
+        <img src="poster.jpg" alt="Our Story">
+
+        <div class="story-quote">
+            ನಾನಿರುವುದು ನಿನಗೆ...<br>
+            ನೀನಿರುವುದು ನನಗೆ...<br>
+            ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ<br>
+            ಆಕಾಶದ ಕೊನೆಗೆ... ❤️
+        </div>
+
+        <div class="audio-box">
+
+            <audio controls autoplay>
+                <source src="song.mp3" type="audio/mpeg">
+            </audio>
+
+        </div>
+
+    </div>
 
 </div>
 
 <script>
 
-function showStory(){
+function nextPage1(){
 
-const welcome = document.getElementById("welcome");
+    let p1=document.getElementById("page1");
 
-welcome.style.opacity = "0";
+    p1.classList.add("hide");
 
-setTimeout(() => {
-welcome.style.display = "none";
+    setTimeout(()=>{
 
-const story = document.getElementById("story");
-story.style.display = "flex";
-},1000);
+        p1.style.display="none";
 
+        document.getElementById("page2").style.display="flex";
+
+    },1200);
 }
+
+function nextPage2(){
+
+    let p2=document.getElementById("page2");
+
+    p2.classList.add("hide");
+
+    setTimeout(()=>{
+
+        p2.style.display="none";
+
+        document.getElementById("page3").style.display="flex";
+
+    },1200);
+}
+
+/* Floating Hearts */
 
 function createHeart(){
 
-const heart = document.createElement("div");
+    const heart=document.createElement("div");
 
-heart.classList.add("heart");
-heart.innerHTML = "❤";
+    heart.className="heart";
 
-heart.style.left = Math.random()*100 + "vw";
-heart.style.fontSize = (Math.random()*20 + 15) + "px";
+    heart.innerHTML="❤";
 
-document.getElementById("welcome").appendChild(heart);
+    heart.style.left=Math.random()*100+"vw";
 
-setTimeout(()=>{
-heart.remove();
-},6000);
+    heart.style.fontSize=(15+Math.random()*25)+"px";
 
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
 }
 
 setInterval(createHeart,500);
