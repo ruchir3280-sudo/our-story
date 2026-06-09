@@ -11,7 +11,7 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:'Arial',sans-serif;
 }
 
 body{
@@ -19,7 +19,7 @@ body{
     background:black;
 }
 
-/* ALL PAGES */
+/* PAGES */
 
 .page{
     position:fixed;
@@ -30,93 +30,31 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    text-align:center;
+    flex-direction:column;
     transition:all 1s ease;
 }
 
-/* HEART BACKGROUND */
+/* WELCOME PAGES */
 
-.hearts-bg{
-    position:absolute;
-    width:100%;
-    height:100%;
-    overflow:hidden;
+#page1{
     background:
-    radial-gradient(circle at center,#ff4d88 0%,#ff0066 30%,#990033 100%);
+    linear-gradient(rgba(255,182,193,.15),rgba(255,182,193,.15)),
+    url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80');
+    background-size:cover;
+    background-position:center;
 }
-
-.bg-heart{
-    position:absolute;
-    color:rgba(255,255,255,0.15);
-    animation:float 10s linear infinite;
-}
-
-@keyframes float{
-    from{
-        transform:translateY(100vh);
-    }
-    to{
-        transform:translateY(-150px);
-    }
-}
-
-.content{
-    position:relative;
-    z-index:5;
-    width:90%;
-    max-width:500px;
-    padding:20px;
-    animation:fadeIn 1.5s ease;
-}
-
-@keyframes fadeIn{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.quote{
-    color:white;
-    font-size:30px;
-    font-weight:bold;
-    line-height:1.8;
-
-    text-shadow:
-    0 0 10px white,
-    0 0 20px #ff99cc,
-    0 0 40px #ff4d88;
-}
-
-.tap{
-    margin-top:30px;
-    color:white;
-    font-size:18px;
-    animation:blink 1.5s infinite;
-}
-
-@keyframes blink{
-    50%{
-        opacity:.3;
-    }
-}
-
-.hide{
-    opacity:0;
-    transform:scale(1.15);
-}
-
-/* PAGE 2 */
 
 #page2{
     display:none;
+
+    background:
+    linear-gradient(rgba(255,182,193,.15),rgba(255,182,193,.15)),
+    url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80');
+    background-size:cover;
+    background-position:center;
 }
 
-/* PAGE 3 */
+/* STORY PAGE */
 
 #page3{
     display:none;
@@ -129,45 +67,143 @@ body{
     background-position:center;
 }
 
+/* HEART GLASS BOX */
+
+.heart-box{
+    width:85%;
+    max-width:550px;
+
+    padding:50px 35px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:40px;
+
+    box-shadow:
+    0 0 25px rgba(255,0,102,.4),
+    0 0 50px rgba(255,0,102,.2);
+
+    animation:fadeUp 1.5s ease;
+}
+
+.quote{
+    color:#ff0066;
+
+    font-size:30px;
+    font-weight:bold;
+
+    line-height:1.8;
+    text-align:center;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.8);
+}
+
+/* TAP TEXT */
+
+.tap{
+    position:absolute;
+
+    bottom:40px;
+
+    color:white;
+
+    font-size:18px;
+
+    text-shadow:0 0 10px black;
+
+    animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:.3;
+    }
+}
+
+/* PAGE TRANSITION */
+
+.hide{
+    opacity:0;
+    transform:scale(1.15);
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* STORY CARD */
+
 .story-card{
+
     width:90%;
     max-width:420px;
-    padding:20px;
 
     background:rgba(255,255,255,.15);
+
     backdrop-filter:blur(10px);
 
     border-radius:25px;
+
+    padding:20px;
+
     color:white;
+
+    animation:fadeUp 1.5s ease;
 }
 
 .story-card h1{
+
     font-size:38px;
+
     margin-bottom:20px;
+
     text-shadow:0 0 10px pink;
 }
 
 .story-card img{
+
     width:100%;
+
     border-radius:20px;
+
     margin-bottom:20px;
 }
 
 .story-quote{
+
     font-size:22px;
+
     font-weight:800;
-    line-height:1.8;
+
+    line-height:1.7;
+
     margin-bottom:25px;
 
     text-shadow:
     0 0 8px #ff66b2,
     0 0 15px #ff3399,
-    0 0 30px #ff1a75;
+    0 0 25px #ff1a75;
 }
 
 .audio-box{
+
     background:white;
+
     padding:12px;
+
     border-radius:15px;
 }
 
@@ -175,27 +211,47 @@ audio{
     width:100%;
 }
 
+/* HEART SHAPE DECORATION */
+
+.big-heart{
+
+    font-size:90px;
+
+    margin-bottom:20px;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    50%{
+        transform:scale(1.1);
+    }
+}
+
 </style>
 </head>
+
 <body>
 
 <!-- PAGE 1 -->
 
 <div id="page1" class="page" onclick="goToPage2()">
 
-    <div class="hearts-bg" id="bg1"></div>
+    <div class="heart-box">
 
-    <div class="content">
+        <div class="big-heart">❤️</div>
 
         <div class="quote">
-            ನಿನ್ನ ನಗುವು ನೋಡಿದ ದಿನದಿಂದ...<br>
+            ನಿನ್ನ ನಗುವು ನೋಡಿದ ದಿನದಿಂದ...<br><br>
+
             ನನ್ನ ಹೃದಯ ನಿನ್ನದಾಯಿತು... ❤️
         </div>
 
-        <div class="tap">
-            ✨ Tap To Continue ✨
-        </div>
+    </div>
 
+    <div class="tap">
+        ✨ Tap Anywhere To Continue ✨
     </div>
 
 </div>
@@ -204,25 +260,27 @@ audio{
 
 <div id="page2" class="page" onclick="goToStory()">
 
-    <div class="hearts-bg" id="bg2"></div>
+    <div class="heart-box">
 
-    <div class="content">
+        <div class="big-heart">💖</div>
 
         <div class="quote">
-            ನೀ ಬಂದ ಮೇಲೆ...<br>
-            ನನ್ನ ಬದುಕಿನ ಪ್ರತಿಯೊಂದು ಕ್ಷಣವೂ<br>
-            ಹಬ್ಬದಂತಾಗಿದೆ... ❤️
-        </div>
+            ನೀ ಬಂದ ಮೇಲೆ...<br><br>
 
-        <div class="tap">
-            🌹 One More Tap 🌹
+            ನನ್ನ ಬದುಕಿನ ಪ್ರತಿಯೊಂದು ಕ್ಷಣವೂ<br>
+
+            ಹಬ್ಬದಂತಾಗಿದೆ... ❤️
         </div>
 
     </div>
 
+    <div class="tap">
+        🌹 One More Tap 🌹
+    </div>
+
 </div>
 
-<!-- PAGE 3 -->
+<!-- STORY PAGE -->
 
 <div id="page3" class="page">
 
@@ -233,16 +291,23 @@ audio{
         <img src="poster.jpg" alt="Story">
 
         <div class="story-quote">
+
             ನಾನಿರುವುದು ನಿನಗೆ...<br>
+
             ನೀನಿರುವುದು ನನಗೆ...<br>
+
             ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ<br>
+
             ಆಕಾಶದ ಕೊನೆಗೆ... ❤️
+
         </div>
 
         <div class="audio-box">
+
             <audio controls autoplay>
                 <source src="song.mp3" type="audio/mpeg">
             </audio>
+
         </div>
 
     </div>
@@ -251,68 +316,37 @@ audio{
 
 <script>
 
-/* PAGE TRANSITIONS */
-
 function goToPage2(){
 
-    const p1=document.getElementById("page1");
+    let p1=document.getElementById("page1");
 
     p1.classList.add("hide");
 
     setTimeout(()=>{
-        p1.style.display="none";
-        document.getElementById("page2").style.display="flex";
-    },1000);
 
+        p1.style.display="none";
+
+        document.getElementById("page2").style.display="flex";
+
+    },1000);
 }
 
 function goToStory(){
 
-    const p2=document.getElementById("page2");
+    let p2=document.getElementById("page2");
 
     p2.classList.add("hide");
 
     setTimeout(()=>{
+
         p2.style.display="none";
+
         document.getElementById("page3").style.display="flex";
+
     },1000);
-
 }
-
-/* HEART BACKGROUND FOR PAGE 1 & PAGE 2 ONLY */
-
-function createBackgroundHeart(containerId){
-
-    const heart=document.createElement("div");
-
-    heart.className="bg-heart";
-    heart.innerHTML="❤";
-
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.fontSize=(20+Math.random()*50)+"px";
-    heart.style.animationDuration=(6+Math.random()*6)+"s";
-
-    document.getElementById(containerId).appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },12000);
-
-}
-
-setInterval(()=>{
-    if(document.getElementById("page1").style.display!=="none"){
-        createBackgroundHeart("bg1");
-    }
-},300);
-
-setInterval(()=>{
-    if(document.getElementById("page2").style.display==="flex"){
-        createBackgroundHeart("bg2");
-    }
-},300);
 
 </script>
 
 </body>
-            </html>
+</html>
