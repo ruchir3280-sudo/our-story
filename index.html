@@ -34,7 +34,7 @@ body{
     transition:all 1s ease;
 }
 
-/* WELCOME PAGES */
+/* WELCOME PAGE 1 */
 
 #page1{
     background:
@@ -43,6 +43,8 @@ body{
     background-size:cover;
     background-position:center;
 }
+
+/* WELCOME PAGE 2 */
 
 #page2{
     display:none;
@@ -67,7 +69,7 @@ body{
     background-position:center;
 }
 
-/* HEART GLASS BOX */
+/* HEART BOX */
 
 .heart-box{
     width:85%;
@@ -88,12 +90,16 @@ body{
     animation:fadeUp 1.5s ease;
 }
 
+.big-heart{
+    font-size:90px;
+    margin-bottom:20px;
+    animation:pulse 2s infinite;
+}
+
 .quote{
     color:#ff0066;
-
     font-size:30px;
     font-weight:bold;
-
     line-height:1.8;
     text-align:center;
 
@@ -101,47 +107,13 @@ body{
     0 0 10px rgba(255,255,255,.8);
 }
 
-/* TAP TEXT */
-
 .tap{
     position:absolute;
-
     bottom:40px;
-
     color:white;
-
     font-size:18px;
-
     text-shadow:0 0 10px black;
-
     animation:blink 1.5s infinite;
-}
-
-@keyframes blink{
-    50%{
-        opacity:.3;
-    }
-}
-
-/* PAGE TRANSITION */
-
-.hide{
-    opacity:0;
-    transform:scale(1.15);
-}
-
-@keyframes fadeUp{
-
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-
 }
 
 /* STORY CARD */
@@ -160,6 +132,8 @@ body{
     padding:20px;
 
     color:white;
+
+    text-align:center;
 
     animation:fadeUp 1.5s ease;
 }
@@ -188,9 +162,13 @@ body{
 
     font-weight:800;
 
-    line-height:1.7;
+    line-height:1.8;
 
     margin-bottom:25px;
+
+    text-align:center;
+
+    width:100%;
 
     text-shadow:
     0 0 8px #ff66b2,
@@ -211,21 +189,35 @@ audio{
     width:100%;
 }
 
-/* HEART SHAPE DECORATION */
+/* ANIMATIONS */
 
-.big-heart{
+.hide{
+    opacity:0;
+    transform:scale(1.15);
+}
 
-    font-size:90px;
-
-    margin-bottom:20px;
-
-    animation:pulse 2s infinite;
+@keyframes blink{
+    50%{
+        opacity:.3;
+    }
 }
 
 @keyframes pulse{
-
     50%{
         transform:scale(1.1);
+    }
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 }
 
@@ -240,15 +232,14 @@ audio{
 
     <div class="heart-box">
 
-        <div class="big-heart">❤️</div>
-
         <div class="quote">
+
             ಅಂತ್ಯವಿಲ್ಲದ ಆರಂಭ ನೀನು...<br><br>
             
             ನಿನಗಷ್ಟೇ ಸ್ವಂತ ನಾನು...❤️
         </div>
 
-       </div>
+    </div>
 
     <div class="tap">
         ✨ Tap Anywhere To Continue ✨
@@ -264,6 +255,7 @@ audio{
 
 
         <div class="quote">
+
             ನಾನಿರುವುದು ನಿನಗೆ...<br>
 
             ನೀನಿರುವುದು ನನಗೆ...<br>
@@ -271,6 +263,7 @@ audio{
             ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ<br>
 
             ಆಕಾಶದ ಕೊನೆಗೆ!!!
+
         </div>
 
     </div>
@@ -281,7 +274,7 @@ audio{
 
 </div>
 
-<!-- STORY PAGE -->
+<!-- PAGE 3 -->
 
 <div id="page3" class="page">
 
@@ -293,11 +286,13 @@ audio{
 
         <div class="story-quote">
 
-            ಪ್ರಿತಿಯಂದರೆ...<br>
+            ಪ್ರೀತಿಯಂದರೆ...<br><br>
 
-            ಕಣ್ಣಲ್ಲಿ ಹುಟ್ಟಿ ಕಣ್ಣೀರಲ್ಲಿ ಕೊನೆಯಾಗುವುದಲ್ಲ...<br>
+            ಕಣ್ಣಲ್ಲಿ ಹುಟ್ಟಿ ಕಣ್ಣೀರಲ್ಲಿ<br>
+            ಕೊನೆಯಾಗುವುದಲ್ಲ...<br><br>
 
-            ಮನಸ್ಸಲ್ಲಿ ಹುಟ್ಟಿ ಮಣ್ಣಾಗುವವರೆಗೆ ಜೊತೆಯಲ್ಲಿರುವುದೆ <br>
+            ಮನಸ್ಸಲ್ಲಿ ಹುಟ್ಟಿ<br>
+            ಮಣ್ಣಾಗುವವರೆಗೆ ಜೊತೆಯಲ್ಲಿರುವುದೇ<br><br>
 
             ನಿಜವಾದ ಪ್ರೀತಿ ❤️
 
@@ -319,7 +314,7 @@ audio{
 
 function goToPage2(){
 
-    let p1=document.getElementById("page1");
+    let p1 = document.getElementById("page1");
 
     p1.classList.add("hide");
 
@@ -334,7 +329,7 @@ function goToPage2(){
 
 function goToStory(){
 
-    let p2=document.getElementById("page2");
+    let p2 = document.getElementById("page2");
 
     p2.classList.add("hide");
 
@@ -350,4 +345,4 @@ function goToStory(){
 </script>
 
 </body>
-</html>
+    </html>
