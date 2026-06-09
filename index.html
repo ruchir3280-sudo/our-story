@@ -8,236 +8,195 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
 }
 
 body{
-overflow:hidden;
-background:black;
+    overflow:hidden;
+    background:black;
 }
 
-/* Pages */
+/* ALL PAGES */
 
 .page{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-background-size:cover;
-background-position:center;
-transition:all 1s ease;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    transition:all 1s ease;
 }
 
-.overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.55);
+/* HEART BACKGROUND */
+
+.hearts-bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at center,#ff4d88 0%,#ff0066 30%,#990033 100%);
+}
+
+.bg-heart{
+    position:absolute;
+    color:rgba(255,255,255,0.15);
+    animation:float 10s linear infinite;
+}
+
+@keyframes float{
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-150px);
+    }
 }
 
 .content{
-position:relative;
-z-index:2;
-padding:20px;
-width:90%;
-max-width:500px;
-animation:fadeUp 1.5s ease;
+    position:relative;
+    z-index:5;
+    width:90%;
+    max-width:500px;
+    padding:20px;
+    animation:fadeIn 1.5s ease;
 }
 
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .quote{
-font-size:30px;
-font-weight:bold;
-line-height:1.8;
-color:white;
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+    line-height:1.8;
 
-text-shadow:
-0 0 10px #ff66b2,
-0 0 20px #ff3399,
-0 0 40px #ff1a75;
+    text-shadow:
+    0 0 10px white,
+    0 0 20px #ff99cc,
+    0 0 40px #ff4d88;
 }
 
 .tap{
-margin-top:30px;
-font-size:18px;
-color:white;
-animation:blink 1.5s infinite;
+    margin-top:30px;
+    color:white;
+    font-size:18px;
+    animation:blink 1.5s infinite;
 }
 
 @keyframes blink{
-50%{
-opacity:.3;
-}
-}
-
-/* Welcome Page 1 */
-
-#page1{
-z-index:3;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.6)),
-url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80');
+    50%{
+        opacity:.3;
+    }
 }
 
-/* Welcome Page 2 */
+.hide{
+    opacity:0;
+    transform:scale(1.15);
+}
+
+/* PAGE 2 */
 
 #page2{
-display:none;
-z-index:2;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.6)),
-url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80');
+    display:none;
 }
 
-/* Story Page */
+/* PAGE 3 */
 
 #page3{
-display:none;
-background:
-linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),
-url('poster.jpg');
-background-size:cover;
-background-position:center;
+    display:none;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.65)),
+    url('poster.jpg');
+
+    background-size:cover;
+    background-position:center;
 }
 
-/* Story Card */
-
 .story-card{
-width:90%;
-max-width:420px;
-padding:20px;
-border-radius:25px;
+    width:90%;
+    max-width:420px;
+    padding:20px;
 
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
 
-color:white;
+    border-radius:25px;
+    color:white;
 }
 
 .story-card h1{
-font-size:38px;
-margin-bottom:20px;
-text-shadow:0 0 10px pink;
+    font-size:38px;
+    margin-bottom:20px;
+    text-shadow:0 0 10px pink;
 }
 
 .story-card img{
-width:100%;
-border-radius:20px;
-margin-bottom:20px;
+    width:100%;
+    border-radius:20px;
+    margin-bottom:20px;
 }
 
 .story-quote{
-font-size:22px;
-font-weight:800;
-line-height:1.7;
-margin-bottom:25px;
+    font-size:22px;
+    font-weight:800;
+    line-height:1.8;
+    margin-bottom:25px;
 
-text-shadow:
-0 0 6px #ff66b2,
-0 0 12px #ff3399,
-0 0 20px #ff1a75;
+    text-shadow:
+    0 0 8px #ff66b2,
+    0 0 15px #ff3399,
+    0 0 30px #ff1a75;
 }
 
 .audio-box{
-background:white;
-padding:12px;
-border-radius:15px;
+    background:white;
+    padding:12px;
+    border-radius:15px;
 }
 
 audio{
-width:100%;
-}
-
-/* Round Image */
-
-.circle{
-width:180px;
-height:180px;
-object-fit:cover;
-border-radius:50%;
-border:4px solid white;
-margin-bottom:25px;
-
-box-shadow:
-0 0 20px #ff66b2,
-0 0 40px #ff3399;
-}
-
-/* Transition */
-
-.hide{
-opacity:0;
-transform:scale(1.15);
-}
-
-/* Hearts */
-
-.heart{
-position:fixed;
-color:#ff4d88;
-pointer-events:none;
-animation:rise 6s linear forwards;
-z-index:999;
-}
-
-@keyframes rise{
-0%{
-transform:translateY(100vh);
-opacity:0;
-}
-20%{
-opacity:1;
-}
-100%{
-transform:translateY(-100px);
-opacity:0;
-}
+    width:100%;
 }
 
 </style>
 </head>
-
 <body>
 
 <!-- PAGE 1 -->
 
 <div id="page1" class="page" onclick="goToPage2()">
 
-<div class="overlay"></div>
+    <div class="hearts-bg" id="bg1"></div>
 
-<div class="content">
+    <div class="content">
 
-<img
-class="circle"
-src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=500&q=80">
+        <div class="quote">
+            ನಿನ್ನ ನಗುವು ನೋಡಿದ ದಿನದಿಂದ...<br>
+            ನನ್ನ ಹೃದಯ ನಿನ್ನದಾಯಿತು... ❤️
+        </div>
 
-<div class="quote">
-ನಿನ್ನ ನಗುವು ನೋಡಿದ ದಿನದಿಂದ...<br>
-ನನ್ನ ಹೃದಯ ನಿನ್ನದಾಯಿತು... ❤️
-</div>
+        <div class="tap">
+            ✨ Tap To Continue ✨
+        </div>
 
-<div class="tap">
-✨ Tap To Continue ✨
-</div>
-
-</div>
+    </div>
 
 </div>
 
@@ -245,106 +204,115 @@ src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fi
 
 <div id="page2" class="page" onclick="goToStory()">
 
-<div class="overlay"></div>
+    <div class="hearts-bg" id="bg2"></div>
 
-<div class="content">
+    <div class="content">
 
-<img
-class="circle"
-src="https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?auto=format&fit=crop&w=500&q=80">
+        <div class="quote">
+            ನೀ ಬಂದ ಮೇಲೆ...<br>
+            ನನ್ನ ಬದುಕಿನ ಪ್ರತಿಯೊಂದು ಕ್ಷಣವೂ<br>
+            ಹಬ್ಬದಂತಾಗಿದೆ... ❤️
+        </div>
 
-<div class="quote">
-ನೀ ಬಂದ ಮೇಲೆ...<br>
-ನನ್ನ ಬದುಕಿನ ಪ್ರತಿಯೊಂದು ಕ್ಷಣವೂ<br>
-ಹಬ್ಬದಂತಾಗಿದೆ... ❤️
-</div>
+        <div class="tap">
+            🌹 One More Tap 🌹
+        </div>
 
-<div class="tap">
-🌹 One More Tap 🌹
-</div>
+    </div>
 
 </div>
 
-</div>
-
-<!-- STORY PAGE -->
+<!-- PAGE 3 -->
 
 <div id="page3" class="page">
 
-<div class="story-card">
+    <div class="story-card">
 
-<h1>Our Story ❤️</h1>
+        <h1>Our Story ❤️</h1>
 
-<img src="poster.jpg" alt="Story">
+        <img src="poster.jpg" alt="Story">
 
-<div class="story-quote">
-ನಾನಿರುವುದು ನಿನಗೆ...<br>
-ನೀನಿರುವುದು ನನಗೆ...<br>
-ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ<br>
-ಆಕಾಶದ ಕೊನೆಗೆ... ❤️
-</div>
+        <div class="story-quote">
+            ನಾನಿರುವುದು ನಿನಗೆ...<br>
+            ನೀನಿರುವುದು ನನಗೆ...<br>
+            ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ<br>
+            ಆಕಾಶದ ಕೊನೆಗೆ... ❤️
+        </div>
 
-<div class="audio-box">
-<audio controls autoplay>
-<source src="song.mp3" type="audio/mpeg">
-</audio>
-</div>
+        <div class="audio-box">
+            <audio controls autoplay>
+                <source src="song.mp3" type="audio/mpeg">
+            </audio>
+        </div>
 
-</div>
+    </div>
 
 </div>
 
 <script>
 
+/* PAGE TRANSITIONS */
+
 function goToPage2(){
 
-const p1=document.getElementById("page1");
+    const p1=document.getElementById("page1");
 
-p1.classList.add("hide");
+    p1.classList.add("hide");
 
-setTimeout(()=>{
-p1.style.display="none";
-document.getElementById("page2").style.display="flex";
-},1000);
+    setTimeout(()=>{
+        p1.style.display="none";
+        document.getElementById("page2").style.display="flex";
+    },1000);
 
 }
 
 function goToStory(){
 
-const p2=document.getElementById("page2");
+    const p2=document.getElementById("page2");
 
-p2.classList.add("hide");
+    p2.classList.add("hide");
 
-setTimeout(()=>{
-p2.style.display="none";
-document.getElementById("page3").style.display="flex";
-},1000);
-
-}
-
-/* Floating Hearts */
-
-function createHeart(){
-
-const heart=document.createElement("div");
-
-heart.className="heart";
-heart.innerHTML="❤";
-
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(15+Math.random()*25)+"px";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},6000);
+    setTimeout(()=>{
+        p2.style.display="none";
+        document.getElementById("page3").style.display="flex";
+    },1000);
 
 }
 
-setInterval(createHeart,500);
+/* HEART BACKGROUND FOR PAGE 1 & PAGE 2 ONLY */
+
+function createBackgroundHeart(containerId){
+
+    const heart=document.createElement("div");
+
+    heart.className="bg-heart";
+    heart.innerHTML="❤";
+
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(20+Math.random()*50)+"px";
+    heart.style.animationDuration=(6+Math.random()*6)+"s";
+
+    document.getElementById(containerId).appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },12000);
+
+}
+
+setInterval(()=>{
+    if(document.getElementById("page1").style.display!=="none"){
+        createBackgroundHeart("bg1");
+    }
+},300);
+
+setInterval(()=>{
+    if(document.getElementById("page2").style.display==="flex"){
+        createBackgroundHeart("bg2");
+    }
+},300);
 
 </script>
 
 </body>
-    </html>
+            </html>
