@@ -8,14 +8,86 @@
 
 <style>
 
-body{
+*{
 margin:0;
 padding:0;
-height:100vh;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+/* Welcome Screen */
+
+#welcome{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
 display:flex;
 justify-content:center;
 align-items:center;
-font-family:Arial,sans-serif;
+text-align:center;
+color:white;
+cursor:pointer;
+z-index:1000;
+transition:opacity 1s ease;
+overflow:hidden;
+}
+
+.welcome-content{
+padding:20px;
+}
+
+.welcome-quote{
+font-size:30px;
+font-weight:bold;
+line-height:1.8;
+text-shadow:
+0 0 10px #ff66b2,
+0 0 20px #ff3399,
+0 0 40px #ff1a75;
+}
+
+.tap{
+margin-top:30px;
+font-size:18px;
+animation:blink 1.5s infinite;
+}
+
+@keyframes blink{
+50%{
+opacity:0.3;
+}
+}
+
+.heart{
+position:absolute;
+color:#ff4d88;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:0;
+}
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+/* Story Page */
+
+#story{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
 
 background:
 linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
@@ -39,16 +111,13 @@ color:white;
 h1{
 font-size:38px;
 margin-bottom:20px;
-color:white;
 text-shadow:0 0 10px pink;
-font-weight:bold;
-  }
+}
 
 img{
 width:100%;
 border-radius:20px;
 margin-bottom:20px;
-display:block;
 }
 
 .quote{
@@ -56,11 +125,7 @@ font-size:22px;
 font-weight:800;
 line-height:1.7;
 margin-bottom:25px;
-text-align:center;
-letter-spacing:1px;
 
-/* glowing effect */
-color:#ffffff;
 text-shadow:
 0 0 6px #ff66b2,
 0 0 12px #ff3399,
@@ -74,14 +139,8 @@ padding:15px;
 border-radius:15px;
 }
 
-.audio-box h2{
-color:black;
-margin-bottom:10px;
-}
-
 audio{
 width:100%;
-height:50px;
 }
 
 </style>
@@ -89,27 +148,89 @@ height:50px;
 
 <body>
 
+<!-- Welcome Screen -->
+
+<div id="welcome" onclick="showStory()">
+
+<div class="welcome-content">
+
+<div class="welcome-quote">
+ಪ್ರೀತಿಯ ಕಥೆ ಆರಂಭವಾಗುವುದು<br>
+ಒಂದು ನಗುವಿನಿಂದ... ❤️
+</div>
+
+<div class="tap">
+✨ Tap Anywhere To Continue ✨
+</div>
+
+</div>
+
+</div>
+
+<!-- Story Page -->
+
+<div id="story">
+
 <div class="container">
 
 <h1>Our Story ❤️</h1>
 
-<img src="poster.jpg">
+<img src="poster.jpg" alt="Our Story">
 
 <div class="quote">
 ನಾನಿರುವುದು ನಿನಗೆ...<br>
-ನೀನಿರುವುದು ನನಗೆ...<br>  
-ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ ಆಕಾಶದ ಕೊನೆಗೆ!!!
+ನೀನಿರುವುದು ನನಗೆ...<br>
+ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ ಆಕಾಶದ ಕೊನೆಗೆ!!! ❤️
 </div>
 
 <div class="audio-box">
-
 <audio controls>
-<source src="https://ruchir3280-sudo.github.io/our-story/song.mp3" type="audio/mpeg">
+<source src="song.mp3" type="audio/mpeg">
 </audio>
-
 </div>
 
 </div>
+
+</div>
+
+<script>
+
+function showStory(){
+
+const welcome = document.getElementById("welcome");
+
+welcome.style.opacity = "0";
+
+setTimeout(() => {
+welcome.style.display = "none";
+
+const story = document.getElementById("story");
+story.style.display = "flex";
+},1000);
+
+}
+
+function createHeart(){
+
+const heart = document.createElement("div");
+
+heart.classList.add("heart");
+heart.innerHTML = "❤";
+
+heart.style.left = Math.random()*100 + "vw";
+heart.style.fontSize = (Math.random()*20 + 15) + "px";
+
+document.getElementById("welcome").appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,500);
+
+</script>
 
 </body>
-</html>
+  </html>
