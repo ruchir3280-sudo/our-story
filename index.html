@@ -8,216 +8,207 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Arial',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    overflow:hidden;
-    background:black;
+overflow:hidden;
+background:black;
 }
 
-/* ALL PAGES */
+/* Pages */
 
 .page{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background-size:cover;
-    background-position:center;
-    transition:all 1.2s ease;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background-size:cover;
+background-position:center;
+transition:all 1s ease;
 }
 
 .overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.55);
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.55);
 }
 
 .content{
-    position:relative;
-    z-index:2;
-    width:90%;
-    max-width:500px;
-    animation:fadeUp 1.5s ease;
+position:relative;
+z-index:2;
+padding:20px;
+width:90%;
+max-width:500px;
+animation:fadeUp 1.5s ease;
 }
 
 @keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 .quote{
-    color:white;
-    font-size:30px;
-    font-weight:bold;
-    line-height:1.8;
+font-size:30px;
+font-weight:bold;
+line-height:1.8;
+color:white;
 
-    text-shadow:
-    0 0 10px #ff66b2,
-    0 0 20px #ff3399,
-    0 0 35px #ff1a75,
-    0 0 55px #ff1a75;
+text-shadow:
+0 0 10px #ff66b2,
+0 0 20px #ff3399,
+0 0 40px #ff1a75;
 }
 
 .tap{
-    margin-top:30px;
-    color:white;
-    font-size:18px;
-    animation:blink 1.5s infinite;
+margin-top:30px;
+font-size:18px;
+color:white;
+animation:blink 1.5s infinite;
 }
 
 @keyframes blink{
-    50%{
-        opacity:0.3;
-    }
+50%{
+opacity:.3;
+}
 }
 
-/* PAGE 1 */
+/* Welcome Page 1 */
 
 #page1{
-    background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
-    url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1200&q=80');
-    z-index:3;
+z-index:3;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80');
 }
 
-/* PAGE 2 */
+/* Welcome Page 2 */
 
 #page2{
-    display:none;
-
-    background:
-    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.55)),
-    url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80');
-
-    z-index:2;
+display:none;
+z-index:2;
+background:
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=1200&q=80');
 }
 
-/* PAGE 3 */
+/* Story Page */
 
 #page3{
-    display:none;
-
-    background:
-    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),
-    url('poster.jpg');
-
-    background-size:cover;
-    background-position:center;
+display:none;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),
+url('poster.jpg');
+background-size:cover;
+background-position:center;
 }
 
-/* STORY CARD */
+/* Story Card */
 
 .story-card{
-    width:90%;
-    max-width:420px;
+width:90%;
+max-width:420px;
+padding:20px;
+border-radius:25px;
 
-    background:rgba(255,255,255,.15);
-    backdrop-filter:blur(10px);
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
 
-    padding:20px;
-    border-radius:25px;
-
-    color:white;
+color:white;
 }
 
 .story-card h1{
-    font-size:38px;
-    margin-bottom:20px;
-    text-shadow:0 0 12px pink;
+font-size:38px;
+margin-bottom:20px;
+text-shadow:0 0 10px pink;
 }
 
 .story-card img{
-    width:100%;
-    border-radius:20px;
-    margin-bottom:20px;
+width:100%;
+border-radius:20px;
+margin-bottom:20px;
 }
 
 .story-quote{
-    font-size:22px;
-    font-weight:800;
-    line-height:1.8;
-    margin-bottom:25px;
+font-size:22px;
+font-weight:800;
+line-height:1.7;
+margin-bottom:25px;
 
-    text-shadow:
-    0 0 6px #ff66b2,
-    0 0 12px #ff3399,
-    0 0 20px #ff1a75,
-    0 0 35px #ff1a75;
+text-shadow:
+0 0 6px #ff66b2,
+0 0 12px #ff3399,
+0 0 20px #ff1a75;
 }
 
 .audio-box{
-    background:white;
-    padding:12px;
-    border-radius:15px;
+background:white;
+padding:12px;
+border-radius:15px;
 }
 
 audio{
-    width:100%;
+width:100%;
 }
 
-/* TRANSITION */
+/* Round Image */
+
+.circle{
+width:180px;
+height:180px;
+object-fit:cover;
+border-radius:50%;
+border:4px solid white;
+margin-bottom:25px;
+
+box-shadow:
+0 0 20px #ff66b2,
+0 0 40px #ff3399;
+}
+
+/* Transition */
 
 .hide{
-    opacity:0;
-    transform:scale(1.15);
+opacity:0;
+transform:scale(1.15);
 }
 
-/* FLOATING HEARTS */
+/* Hearts */
 
 .heart{
-    position:fixed;
-    color:#ff4d88;
-    pointer-events:none;
-    z-index:9999;
-
-    animation:rise 6s linear forwards;
+position:fixed;
+color:#ff4d88;
+pointer-events:none;
+animation:rise 6s linear forwards;
+z-index:999;
 }
 
 @keyframes rise{
-    0%{
-        transform:translateY(100vh);
-        opacity:0;
-    }
-
-    20%{
-        opacity:1;
-    }
-
-    100%{
-        transform:translateY(-120px);
-        opacity:0;
-    }
+0%{
+transform:translateY(100vh);
+opacity:0;
 }
-
-/* GLOWING IMAGE */
-
-.circle-image{
-    width:180px;
-    height:180px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid white;
-    margin-bottom:25px;
-
-    box-shadow:
-    0 0 20px #ff66b2,
-    0 0 40px #ff3399;
+20%{
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
 }
 
 </style>
@@ -227,134 +218,128 @@ audio{
 
 <!-- PAGE 1 -->
 
-<div id="page1" class="page" onclick="nextPage1()">
+<div id="page1" class="page" onclick="goToPage2()">
 
-    <div class="overlay"></div>
+<div class="overlay"></div>
 
-    <div class="content">
+<div class="content">
 
-        <img
-        class="circle-image"
-        src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=500&q=80">
+<img
+class="circle"
+src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=500&q=80">
 
-        <div class="quote">
-            ಪ್ರೀತಿಯ ಕಥೆ ಆರಂಭವಾಗುವುದು<br>
-            ಒಂದು ನಗುವಿನಿಂದ... ❤️
-        </div>
+<div class="quote">
+ನಿನ್ನ ನಗುವು ನೋಡಿದ ದಿನದಿಂದ...<br>
+ನನ್ನ ಹೃದಯ ನಿನ್ನದಾಯಿತು... ❤️
+</div>
 
-        <div class="tap">
-            ✨ Tap Anywhere To Continue ✨
-        </div>
+<div class="tap">
+✨ Tap To Continue ✨
+</div>
 
-    </div>
+</div>
 
 </div>
 
 <!-- PAGE 2 -->
 
-<div id="page2" class="page" onclick="nextPage2()">
+<div id="page2" class="page" onclick="goToStory()">
 
-    <div class="overlay"></div>
+<div class="overlay"></div>
 
-    <div class="content">
+<div class="content">
 
-        <img
-        class="circle-image"
-        src="https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?auto=format&fit=crop&w=500&q=80">
+<img
+class="circle"
+src="https://images.unsplash.com/photo-1518622358385-8ea7d0794bf6?auto=format&fit=crop&w=500&q=80">
 
-        <div class="quote">
-            ನೀ ಬಂದ ಮೇಲೆ ನನ್ನ ಜೀವನಕ್ಕೆ<br>
-            ಬಣ್ಣಗಳೇ ಬಣ್ಣಗಳು... ❤️
-        </div>
+<div class="quote">
+ನೀ ಬಂದ ಮೇಲೆ...<br>
+ನನ್ನ ಬದುಕಿನ ಪ್ರತಿಯೊಂದು ಕ್ಷಣವೂ<br>
+ಹಬ್ಬದಂತಾಗಿದೆ... ❤️
+</div>
 
-        <div class="tap">
-            🌹 One More Tap 🌹
-        </div>
-
-    </div>
+<div class="tap">
+🌹 One More Tap 🌹
+</div>
 
 </div>
 
-<!-- PAGE 3 -->
+</div>
+
+<!-- STORY PAGE -->
 
 <div id="page3" class="page">
 
-    <div class="story-card">
+<div class="story-card">
 
-        <h1>Our Story ❤️</h1>
+<h1>Our Story ❤️</h1>
 
-        <img src="poster.jpg" alt="Our Story">
+<img src="poster.jpg" alt="Story">
 
-        <div class="story-quote">
-            ನಾನಿರುವುದು ನಿನಗೆ...<br>
-            ನೀನಿರುವುದು ನನಗೆ...<br>
-            ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ<br>
-            ಆಕಾಶದ ಕೊನೆಗೆ... ❤️
-        </div>
+<div class="story-quote">
+ನಾನಿರುವುದು ನಿನಗೆ...<br>
+ನೀನಿರುವುದು ನನಗೆ...<br>
+ನಮ್ಮಿಬ್ಬರ ಪ್ರೀತಿ ಬೆಳೆಯಲಿ<br>
+ಆಕಾಶದ ಕೊನೆಗೆ... ❤️
+</div>
 
-        <div class="audio-box">
+<div class="audio-box">
+<audio controls autoplay>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+</div>
 
-            <audio controls autoplay>
-                <source src="song.mp3" type="audio/mpeg">
-            </audio>
-
-        </div>
-
-    </div>
+</div>
 
 </div>
 
 <script>
 
-function nextPage1(){
+function goToPage2(){
 
-    let p1=document.getElementById("page1");
+const p1=document.getElementById("page1");
 
-    p1.classList.add("hide");
+p1.classList.add("hide");
 
-    setTimeout(()=>{
+setTimeout(()=>{
+p1.style.display="none";
+document.getElementById("page2").style.display="flex";
+},1000);
 
-        p1.style.display="none";
-
-        document.getElementById("page2").style.display="flex";
-
-    },1200);
 }
 
-function nextPage2(){
+function goToStory(){
 
-    let p2=document.getElementById("page2");
+const p2=document.getElementById("page2");
 
-    p2.classList.add("hide");
+p2.classList.add("hide");
 
-    setTimeout(()=>{
+setTimeout(()=>{
+p2.style.display="none";
+document.getElementById("page3").style.display="flex";
+},1000);
 
-        p2.style.display="none";
-
-        document.getElementById("page3").style.display="flex";
-
-    },1200);
 }
 
 /* Floating Hearts */
 
 function createHeart(){
 
-    const heart=document.createElement("div");
+const heart=document.createElement("div");
 
-    heart.className="heart";
+heart.className="heart";
+heart.innerHTML="❤";
 
-    heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*25)+"px";
 
-    heart.style.left=Math.random()*100+"vw";
+document.body.appendChild(heart);
 
-    heart.style.fontSize=(15+Math.random()*25)+"px";
+setTimeout(()=>{
+heart.remove();
+},6000);
 
-    document.body.appendChild(heart);
-
-    setTimeout(()=>{
-        heart.remove();
-    },6000);
 }
 
 setInterval(createHeart,500);
@@ -362,4 +347,4 @@ setInterval(createHeart,500);
 </script>
 
 </body>
-  </html>
+    </html>
